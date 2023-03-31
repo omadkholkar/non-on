@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Price Prediction</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+	<h2>Car Price Prediction Form</h2>
+	<form action="http://localhost:5000/car_price" method="post">
+		
+        
+			<label for="my-dropdown">Select a number:</label>
+			<select name="my-dropdown" id="my-dropdown">
+			  {% for num in my_list %}
+				<option value="{{ num }}">{{ num }}</option>
+			  {% endfor %}
+			</select>
+		  <br><br>
+
+		<label for="year">Year:</label>
+		<input type="text" id="year" name="year" value="2019"><br><br>
+		<label for="transmission">Transmission:</label>
+		<select id="transmission" name="transmission">
+			<option value="Manual" selected>Manual</option>
+			<option value="Automatic">Automatic</option>
+			<option value="Semi-Auto">Semi-Auto</option>
+			<option value="Other">Other</option>
+		</select><br><br>
+		<label for="mileage">Mileage:</label>
+		<input type="text" id="mileage" name="mileage" value="100"><br><br>
+		<label for="fuel-type">Fuel Type:</label>
+		<select id="fuel-type" name="fuel-type">
+			<option value="Petrol" selected>Petrol</option>
+			<option value="Diesel">Diesel</option>
+			<option value="Hybrid">Hybrid</option>
+			<option value="Other">Other</option>
+			<option value="Electric">Electric</option>
+		</select><br><br>
+		<label for="tax">Tax:</label>
+		<input type="text" id="tax" name="tax" value="120"><br><br>
+		<label for="mpg">Mileage Per Gallon:</label>
+		<input type="text" id="mpg" name="mpg" value="56"><br><br>
+		<label for="engine-size">Engine Size:</label>
+		<input type="text" id="engine-size" name="engine-size" value="2"><br><br>
+		<label for="Age">Age of Car:</label>
+		<input type="text" id="Age" name="Age" value="3"><br><br>
+		<p> <input type="submit" value="submit"/></p>
+	</form>
+	<br>
+    <br>
+    
+    <p>{{ result }}</p>
+
+</body>
+</html>
